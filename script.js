@@ -57,10 +57,10 @@ let bindCompleteItems = function (taskItem,
 
 
 let bindIncompleteItems = function(taskItem, 
-    checkBoxChlick) {
+    checkBoxClick) {
     let checkBox = taskItem.querySelector(
         'input[type="checkbox"]');
-    checkBox.onchange = checkBoxChlick;
+    checkBox.onchange = checkBoxClick;
 }
 
 
