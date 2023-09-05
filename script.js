@@ -4,13 +4,25 @@ const from = document.querySelector('form');
 const todoUl = document.querySelector("#items");
 const completeUl = document.querySelector(".complete-list ul");
 
+let dv = document.createElement('div');
+let lii = document.createElement('li');
+
+lii.setAttribute('class', 'lii');
+
+dv.appendChild(lii);
+
+console.log("->", dv.innerHTML);
+
+
+
+console.log(document.querySelector(".complete-list > ul"));
 
 let createTask = function(task){
     let listItem = document.createElement('li');
     let checkbox = document.createElement('input');
     let label = document.createElement('label');
 
-    label.innerText = task;
+    label.textContent = task;
     checkbox.type = 'checkbox';
 
     listItem.appendChild(checkbox);
@@ -33,8 +45,10 @@ let completeTask = function() {
     let deleteBtn = document.createElement('button');
     deleteBtn.innerText = 'Delete';
     deleteBtn.className = 'delete';
+    console.log("BTN ", this.parentNode);
+    console.log("BTN ", deleteBtn);
     listItem.appendChild(deleteBtn);
-
+    
     let checkbox = listItem.querySelector(
         'input[type="checkbox"]');
     checkbox.remove();
@@ -61,6 +75,7 @@ let bindIncompleteItems = function(taskItem,
     let checkBox = taskItem.querySelector(
         'input[type="checkbox"]');
     checkBox.onchange = checkBoxClick;
+    
 }
 
 
